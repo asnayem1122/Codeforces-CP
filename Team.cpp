@@ -6,20 +6,21 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int t; cin >> t;
+    int n;
+    cin >> n;
 
-    int rows=t ,cols=3;
+    int count = 0;
 
-    vector<vector<int>>grid(rows,vector<int>(cols,0));
-    for(int i=0;i<t;i++){
-        for(int j=0;j<cols;j++){
-            cin>> grid[i][j];
-            
+    for (int i = 0; i < n; i++) {
+        int p, v, t;
+        cin >> p >> v >> t;
+
+        if (p + v + t >= 2) {
+            count++;
         }
     }
 
-    for(int i: x){
-        if(x[i][0]+)
-    }
+    cout << count << "\n";
+
     return 0;
 }
