@@ -17,7 +17,7 @@ int main() {
         w++;
     }
     else if(m%a > 0 && n%a == 0){l++;}
-    else{w++;}
+    else if(m%a == 0 && n%a > 0){w++;}
  
     cout << l*w;
  
