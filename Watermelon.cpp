@@ -12,8 +12,9 @@ int main() {
         return 0;
     }
     
-    if(w%2 == 0)
+    if(w%2 == 0){
         cout << "YES";
+    }
     else
         cout << "NO";
 
