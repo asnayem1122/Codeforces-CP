@@ -11,9 +11,9 @@ int main(){
     cin>> x; cin>> y;
 
 
-    if(abs(2*x<y)){
+    if(abs(2*x<y))
         cout<<"YES\n";
-    } 
+     
     else cout<<"NO\n";
 }
 
