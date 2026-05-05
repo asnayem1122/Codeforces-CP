@@ -2,34 +2,45 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int solve(int i, int j){
-   return min(min(i, j), min(9-i, 9-j))+1;
+vector<int> solve(vector<int>&b){
+    vector<int>a;
+    long long n = b.size();
+    a.push_back(b[0]); 
+        for (long long i = 1; i < n; i++) 
+        {
+            if (b[i] >= b[i - 1])
+                a.push_back(b[i]); 
+            else
+            {
+                a.push_back(b[i]); 
+                a.push_back(b[i]); 
+            }
+        }
+
+    return a;
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int t;
-    cin>>t;
+    long long t;
+    cin >> t;
     while(t--){
-        vector<vector<char>>board(10, vector<char>(10));
-        for(auto &i : board){
-            for(auto &j : i){
-                cin>>j;
-            }
+        long long n;
+        cin >> n;
+
+        vector<int> arr(n);
+        for(auto &i: arr){
+            cin >> i;
         }
 
-        int sum = 0;
-        for(int i = 0; i<10; i++){
-            for(int j = 0; j<10; j++){
-                if(board[i][j] == 'X'){
-                    sum+=solve(i, j);
-                }
-            }
+        vector<int> ans = solve(arr);
+
+        cout << ans.size() << endl;
+        for(auto &i : ans){
+            cout << i << " ";
         }
-        cout<<sum<<endl;
+        cout << endl;
     }
-
-    return 0;
 }
